@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "833928269723",
+    "project_id": "muj-unified",
+    "storage_bucket": "muj-unified.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833928269723:android:869b39be6c0fdce9799b3e",
+        "android_client_info": {
+          "package_name": "com.aliferous.mujunified"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833928269723-ji688nmc8cqqjdh2nakergbm3jgd48sh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJcHvj-k14Qmed1uSPRmSTAnfsfR0C1Xc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "833928269723-ji688nmc8cqqjdh2nakergbm3jgd48sh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "833928269723-e6pdqk5l2c3e727j9kc1lvg8168q9mqf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.aliferous.MUJ-Unified"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
