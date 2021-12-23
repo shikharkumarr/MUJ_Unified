@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MUJUnified">
         <activity
-            android:name=".ProfileActivity"
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,14 +24,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".FoodActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:name=".LoginActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

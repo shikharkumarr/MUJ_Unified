@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -98,7 +99,7 @@ public class RegisterActivity extends AppCompatActivity {
                             assert firebaseUser != null;
                             String userid = firebaseUser.getUid();
 
-                            HashMap<String, String> hashMap = new HashMap<>();
+                            HashMap<String, Object> hashMap = new HashMap<>();
                             hashMap.put("id", userid);
                             hashMap.put("username", username);
                             hashMap.put("gender", gender);
@@ -118,13 +119,17 @@ public class RegisterActivity extends AppCompatActivity {
 
                             hashMap.put("search", username.toLowerCase());
 
-                            reference.collection("Users").add(hashMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            reference.collection("Users").document(userid).set(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
-                                public void onSuccess(DocumentReference documentReference) {
-
+                                public void onSuccess(Void unused) {
+                                    Toast.makeText(RegisterActivity.this, "Sexxyyy", Toast.LENGTH_SHORT).show();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(RegisterActivity.this, "Error: " + e, Toast.LENGTH_SHORT).show();
                                 }
                             });
-
 
                         }
                         else{
