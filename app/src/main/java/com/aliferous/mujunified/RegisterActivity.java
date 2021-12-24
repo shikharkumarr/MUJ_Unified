@@ -21,8 +21,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.auth.User;
 
 import java.util.HashMap;
+
+import Model.Users;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -99,6 +102,8 @@ public class RegisterActivity extends AppCompatActivity {
                             assert firebaseUser != null;
                             String userid = firebaseUser.getUid();
 
+                            Users user = new Users(username,password,email,userid,username.toLowerCase(),course,gender,year,section);
+
                             HashMap<String, Object> hashMap = new HashMap<>();
                             hashMap.put("id", userid);
                             hashMap.put("username", username);
@@ -119,7 +124,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                             hashMap.put("search", username.toLowerCase());
 
-                            reference.collection("Users").document(userid).set(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            reference.collection("Users").document(userid).set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
                                     Toast.makeText(RegisterActivity.this, "Sexxyyy", Toast.LENGTH_SHORT).show();
