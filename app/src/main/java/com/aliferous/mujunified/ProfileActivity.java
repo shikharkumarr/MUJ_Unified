@@ -45,8 +45,6 @@ public class ProfileActivity extends AppCompatActivity {
         String UserId = firebaseUser.getUid();
 
         DocumentReference docRef = reference.collection("Users").document(UserId);
-
-
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
