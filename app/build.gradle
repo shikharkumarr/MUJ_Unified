@@ -41,6 +41,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-database'
 
     //for fixing errors with firestore in android 11
     implementation "io.grpc:grpc-okhttp:1.32.2"
