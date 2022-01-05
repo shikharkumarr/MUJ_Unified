@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 
 public class MainActivity extends AppCompatActivity {
-    FrameLayout ProfileButton;
+    FrameLayout ProfileButton, FoodButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +18,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ProfileButton = findViewById(R.id.Map);
+        FoodButton = findViewById(R.id.Food);
 
         ProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        FoodButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FoodActivity.class);
                 startActivity(intent);
             }
         });
